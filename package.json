@@ -1,5 +1,5 @@
 {
-    "name": "firebase-functions-rate-limiter",
+    "name": "@ratelimiting/firebase-functions-rate-limiter",
     "version": "0.0.0-development",
     "description": "JS/TS library that allows you to set per - time, per - user or per - anything limits for calling Firebase cloud functions",
     "main": "dist/index.js",
@@ -16,7 +16,7 @@
         "build:lint": "tslint -c tslint.json -p tsconfig.lint.json",
         "build:node": "tsc",
         "build": "npm run build:cleanbefore && npm run build:node && npm run build:lint",
-        "prepare": "NODE_ENV=production npm run build",
+        "prepare": "npm run build",
         "test": "find src -name '*.spec.test.ts' | TS_NODE_FILES=true TS_NODE_CACHE=false TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' xargs mocha -r ts-node/register --require source-map-support/register",
         "do_verify": "find src -name '*.integration.test.ts' | TS_NODE_FILES=true TS_NODE_CACHE=false TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' xargs mocha -r ts-node/register --require source-map-support/register",
         "verify": "bash scripts/run-integration-tests-with-firebase-emulator.sh",
@@ -77,22 +77,5 @@
         ],
         "all": true
     },
-    "release": {},
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Jblew/firebase-functions-rate-limiter"
-    },
-    "keywords": [
-        "firebase",
-        "firebase-functions",
-        "rate-limiter"
-    ],
-    "author": "Jędrzej Lewandowski <jedrzejblew@gmail.com> (https://jedrzej.lewandowski.doctor/)",
-    "contributors": [
-        "Jędrzej Lewandowski <jedrzejblew@gmail.com> (https://jedrzej.lewandowski.doctor/)"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Jblew/firebase-functions-rate-limiter/issues"
-    }
+    "release": {}
 }

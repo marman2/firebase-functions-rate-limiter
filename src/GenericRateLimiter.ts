@@ -36,7 +36,7 @@ export class GenericRateLimiter {
         const resultHolder = {
             isQuotaExceeded: false,
         };
-        await this.persistenceProvider.updateAndGet(this.configuration.name, qualifier, record => {
+        await this.persistenceProvider.updateAndGet(this.configuration.name, qualifier, (record) => {
             return this.runTransactionForAnswer(record, resultHolder);
         });
 
@@ -97,5 +97,9 @@ export class GenericRateLimiter {
             current: currentServerTimestampSeconds,
             threshold: currentServerTimestampSeconds - this.configuration.periodSeconds,
         };
+    }
+
+    public setMaxCalls(maxCalls: number): void {
+        this.configuration.maxCalls = maxCalls;
     }
 }

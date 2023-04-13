@@ -159,6 +159,10 @@ export class FirebaseFunctionsRateLimiter {
         return this.configurationFull;
     }
 
+    public setRateLimiter(rateLimiter: number): void {
+        this.genericRateLimiter.setMaxCalls(rateLimiter);
+    }
+
     /*
      * Private methods
      */
